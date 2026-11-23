@@ -1,0 +1,22 @@
+<article class="project">
+  <h2><a href="{{ include.project.url }}" rel="noopener noreferrer">{{ include.project.name }}</a></h2>
+  <p class="summary">{{ include.project.summary }}</p>
+  {% unless include.compact %}
+    {% if include.project.description %}
+    <p>{{ include.project.description }}</p>
+    {% endif %}
+    {% if include.project.highlights %}
+    <ul class="highlights">
+      {% for item in include.project.highlights %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endunless %}
+  {% if include.project.tags %}
+  <p class="tags">{% for tag in include.project.tags %}{{ tag }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+  {% endif %}
+  {% if include.project.repo %}
+  <p class="repo"><a href="{{ include.project.url }}" rel="noopener noreferrer">{{ include.project.repo }}</a></p>
+  {% endif %}
+</article>
