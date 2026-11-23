@@ -1,0 +1,53 @@
+# Projects rendered on the home page (featured: true) and on /projects/.
+# Copy an entry, fill it from the repository you can point to, and push to main.
+# Leave out metrics, employers, and papers you cannot link.
+
+- name: PharmRAG
+  url: https://github.com/aethflux/pharmrag
+  repo: aethflux/pharmrag
+  summary: Medical knowledge QA with RAG, multi-provider models, memory, fallback retrieval, and tests.
+  description: >
+    A demo for medical questions. Chat uses ModelScope or an OpenAI-compatible
+    model. Embeddings are chosen separately and can be turned off. A medical
+    knowledge base and a personal knowledge base are independent, and each one
+    enters the prompt only when it is switched on. Retrieval is a local FAISS
+    index in vector, hybrid, or keyword mode, and it falls back to keywords
+    when embeddings are unavailable.
+  highlights:
+    - Single-turn file and image questions, with text extraction, OCR, and an optional vision-model summary. An attachment stays in the current turn unless you explicitly save a personal note.
+    - Local session history and summary memory.
+    - Rule-level checks for urgent risk, diagnostic claims, personalized medication changes, and medical-image questions.
+    - Streamlit UI and a FastAPI service.
+    - Retrieval eval, answer eval, and pytest, including an offline GitHub Actions run.
+  tags:
+    - Python
+    - RAG
+    - FAISS
+    - FastAPI
+    - Streamlit
+  featured: true
+
+- name: Shadow Desktop Agent
+  url: https://github.com/aethflux/ShadowDesktopAgent
+  repo: aethflux/ShadowDesktopAgent
+  summary: A resident desktop multimodal agent with an Electron pet, a FastAPI backend, semantic memory, and controlled tools.
+  description: >
+    Shadow stays on the desktop. The Electron app is a transparent pet with its
+    own input, a console, a context menu, and a settings page. The FastAPI
+    backend routes intent, plans tasks, watches the screen, and can start a
+    conversation. Text, vision, embedding, speech, and image generation are
+    configured separately, and can be pointed at MiniMax, ModelScope, OpenAI,
+    Anthropic, or vLLM.
+  highlights:
+    - Memory is JSONL session history plus ChromaDB semantic search.
+    - Speech uses Edge Neural TTS, with browser speech synthesis as a fallback. Speech input is an optional MiniMax path and is off by default.
+    - Image generation can make console scenes and pet artwork, and is also exposed as an agent tool.
+    - Proactive chat is rate-limited. The desktop side goes quiet when the system is actually idle. Topics can come from memory, time of day, or public RSS feeds.
+    - Tools stay inside a working directory. They include a controlled terminal, external CLIs, screenshots, MCP filesystem, and local skills. High-risk commands are blocked, and MCP write tools are filtered. It does not drive the mouse or keyboard.
+    - Backend checks include pytest, ruff, and intent and collaboration evals.
+  tags:
+    - Python
+    - FastAPI
+    - Electron
+    - ChromaDB
+  featured: true

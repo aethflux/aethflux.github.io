@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<header class="intro">
+  <h1>Jiaqi Sun</h1>
+  <p class="name-zh">孙佳琦</p>
+  <p class="lede">Pharmacy background. Building AI agents. Moving into mid-training and post-training for science, especially bio models.</p>
+</header>
+
+<div class="about">
+  <p>I am a pharmacy undergraduate, and I build agents alongside that study. PharmRAG is a medical knowledge QA system with retrieval, multi-provider models, memory, and a keyword fallback. Shadow Desktop Agent is a desktop companion with screen observation, semantic memory, and controlled tools. I keep this page for teams that train models.{% assign stubs = site.posts | where: "placeholder", true %}{% if stubs.size > 0 %} The first note under Writing is a draft placeholder.{% endif %}</p>
+</div>
+
+<section class="section" aria-labelledby="projects-heading">
+  <div class="section-head">
+    <h2 id="projects-heading">Projects</h2>
+    <a href="{{ '/projects/' | relative_url }}">All projects</a>
+  </div>
+  {% assign featured = site.data.projects | where: "featured", true %}
+  {% for project in featured %}
+    {% include project.html project=project compact=true %}
+  {% endfor %}
+</section>
+
+<section class="section" aria-labelledby="writing-heading">
+  <div class="section-head">
+    <h2 id="writing-heading">Writing</h2>
+    <a href="{{ '/writing/' | relative_url }}">All writing</a>
+  </div>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit: 3 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.placeholder %} <span class="pill">Draft placeholder</span>{% endif %}
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      <p>{{ post.excerpt | strip_html }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No notes yet.</p>
+  {% endif %}
+</section>

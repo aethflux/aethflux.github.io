@@ -1,0 +1,71 @@
+title: Jiaqi Sun
+tagline: Pharmacy background. Building AI agents.
+description: >-
+  Pharmacy background. Building AI agents. Moving into mid-training and
+  post-training for science, especially bio models.
+author:
+  name: Jiaqi Sun
+  twitter: jiaqisunacc
+url: https://aethflux.github.io
+baseurl: ""
+lang: en_US
+repository: aethflux/aethflux.github.io
+
+twitter:
+  username: jiaqisunacc
+  card: summary
+
+social:
+  name: Jiaqi Sun
+  links:
+    - https://github.com/aethflux
+    - https://x.com/jiaqisunacc
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+permalink: /writing/:title/
+timezone: Etc/UTC
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-readme-index
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-coffeescript
+
+titles_from_headings:
+  enabled: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - node_modules
+  - scripts
+
+feed:
+  path: feed.xml

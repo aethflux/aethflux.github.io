@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" id="theme-color" content="#f4f1ea">
+  {% if page.placeholder or page.noindex %}
+  <meta name="robots" content="noindex, follow">
+  {% endif %}
+  {% seo %}
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    (function () {
+      var mode = "light";
+      try {
+        var stored = localStorage.getItem("theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+          mode = stored;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          mode = "dark";
+        }
+      } catch (e) {}
+      var meta = document.getElementById("theme-color");
+      if (meta) meta.setAttribute("content", mode === "dark" ? "#0b1828" : "#f4f1ea");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  {% include header.html %}
+  <main id="content">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+</body>
+</html>

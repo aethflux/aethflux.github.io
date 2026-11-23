@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="wrap inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/favicon.svg' | relative_url }}" width="28" height="28" alt="">
+      <span>Jiaqi Sun</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/projects/' | relative_url }}" {% if page.url == "/projects/" %}aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/writing/' | relative_url }}" {% if page.url == "/writing/" or page.layout == "post" %}aria-current="page"{% endif %}>Writing</a>
+      <a href="https://github.com/aethflux" rel="me noopener noreferrer">GitHub</a>
+      <a href="https://x.com/jiaqisunacc" rel="me noopener noreferrer">X</a>
+    </nav>
+    <button type="button" id="theme-toggle" aria-label="Switch color theme">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>

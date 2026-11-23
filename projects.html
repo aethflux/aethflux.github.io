@@ -1,0 +1,18 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+description: Projects by Jiaqi Sun. PharmRAG, a medical knowledge QA system, and Shadow Desktop Agent, a resident desktop agent.
+---
+<header class="page-intro">
+  <h1>Projects</h1>
+  <p>Public code, summarized from the repositories.</p>
+</header>
+
+<div class="projects">
+  {% for project in site.data.projects %}
+    {% include project.html project=project %}
+  {% else %}
+  <p>No projects yet.</p>
+  {% endfor %}
+</div>

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+description: Notes by Jiaqi Sun on AI agents and on mid-training and post-training for science models.
+---
+<header class="page-intro">
+  <h1>Writing</h1>
+  <p>Notes on agents and on training science models.</p>
+</header>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.placeholder %} <span class="pill">Draft placeholder</span>{% endif %}
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+    <p>{{ post.excerpt | strip_html }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No posts yet.</p>
+{% endif %}
